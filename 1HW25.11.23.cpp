@@ -8,34 +8,34 @@ int main()
 	char text2[50];
 	setlocale(LC_ALL, "Russian");
 
-	// создание файла и запись в него "Hello Worlld!"
+	// СЃРѕР·РґР°РЅРёРµ С„Р°Р№Р»Р° Рё Р·Р°РїРёСЃСЊ РІ РЅРµРіРѕ "Hello Worlld!"
 	ofstream file;
 	file.open("text.txt");
-	// или ofstream file("text.txt"); (заменяет две строки выше)
+	// РёР»Рё ofstream file("text.txt"); (Р·Р°РјРµРЅСЏРµС‚ РґРІРµ СЃС‚СЂРѕРєРё РІС‹С€Рµ)
 	file << "Hello World!";
 	file.close();
 
-	// чтение и вывод данных файла
+	// С‡С‚РµРЅРёРµ Рё РІС‹РІРѕРґ РґР°РЅРЅС‹С… С„Р°Р№Р»Р°
 	ifstream file1("text.txt");
 	if (!file1.is_open())
-		cout << "файл не найден" << endl;
+		cout << "С„Р°Р№Р» РЅРµ РЅР°Р№РґРµРЅ" << endl;
 	else
 	{
-		//выведет только первое слово из файла
+		//РІС‹РІРµРґРµС‚ С‚РѕР»СЊРєРѕ РїРµСЂРІРѕРµ СЃР»РѕРІРѕ РёР· С„Р°Р№Р»Р°
 		file1 >> text;
 		cout << text << endl;
-		//выведет записи из файла
+		//РІС‹РІРµРґРµС‚ Р·Р°РїРёСЃРё РёР· С„Р°Р№Р»Р°
 		file1.getline(text, sizeof(text));
 		cout << text << endl;
 		file.close();
 	}
 
-	// добавление записей в файл
+	// РґРѕР±Р°РІР»РµРЅРёРµ Р·Р°РїРёСЃРµР№ РІ С„Р°Р№Р»
 	ofstream file2;
 	file2.open("text1.txt", std::ios_base::app);
 	file2 << "Hi";
 
-	// удаление записей из файла
+	// СѓРґР°Р»РµРЅРёРµ Р·Р°РїРёСЃРµР№ РёР· С„Р°Р№Р»Р°
 	ifstream inputFile("input.txt");
 	ofstream outputFile("output.txt");
 	string line;
@@ -55,10 +55,10 @@ int main()
 	}
 	else
 	{
-		cout << "Не удалось открыть файл." << endl;
+		cout << "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»." << endl;
 	}
 
-	// исправление записей в файле
+	// РёСЃРїСЂР°РІР»РµРЅРёРµ Р·Р°РїРёСЃРµР№ РІ С„Р°Р№Р»Рµ
 	ifstream input("in.txt");
 	ofstream output("out.txt");
 	string line11;
@@ -82,7 +82,7 @@ int main()
 	}
 	else
 	{
-		cout << "Не удалось открыть файл.!" << endl;
+		cout << "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р».!" << endl;
 		return 0;
 	}
 }
